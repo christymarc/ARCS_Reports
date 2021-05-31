@@ -1,1 +1,22 @@
+# Activities
 
+* Learned how to use git commands in command line
+* Completed lessons 1, 2, and 3 of FastAI course.
+  * Learned the basics of neural networks and neural network vocabulary (model architecture, parameters, loss, etc.)
+  * Learned about different methods of data augmentation, deep learning ethics
+  * Learned how to create a CNN with FastAI package
+* Created a CNN that takes images obtained from maze simulation and predicts the move a robot in the maze should take in order to complete the maze
+  * Error rate of 0.015504.
+* Attempted to use that model in the actual maze and see if the robot would progress through (using code from example-fastai.py)
+* Attempted to create an animation of the robot's progression through the maze using Matplotlib.
+
+# Issues
+
+* Had issues when trying to get model to actually guide the robot through the maze
+  * Had slight left and right movements but didn't go forward as it should have based on the data the network was trained on
+* The animation was really slow to run, but I think it works -- not completely sure since the movements weren't very distinct, which is due to the issue stated above.
+
+# Plans
+
+* Continue progressing through the FastAI course
+* Try to fix the issues with the model's prediction in the actual maze
