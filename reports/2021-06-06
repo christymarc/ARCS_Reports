@@ -1,0 +1,29 @@
+# Activities
+
+[List of items you worked on since our last meeting--all accomplishments and concepts/lessons learned. Some weeks there may not be any—-that's OK.  
+Including plots, images or videos is great.]
+* Continued work on FASTAI course, completing lesson 4. 
+  * Learned about creating NNs from scratch (hand-written digit classification)
+* Created model that takes previous move into account 
+  * Wrote Pytorch version and FastAI version
+  * Created own dataset class
+  * Learned more about FastAI's functionality as well as limitations
+    * Learned about different samplers, loss functions, FastAI's learner class
+    * Learned about FastAI's way of adding onto pretrained models and how to go about training custom models
+* Installed the Black autoformatter
+* Rewrote Example-FastAI-Marchese notebook for new models and ran the models through the maze
+
+# Issues
+
+* Had a lot of issues getting FastAI to run -> issues with dataset, dataloader, sampler, cnn_learner, etc.
+  * These were mostly resolved. Found out because cnn_learner already adds new layers and trains them automatically, putting custom models into it doesn't
+  really work. I needed to use the learner class
+* Issue exporting models in FastAI, giving the following error: "'ImageWithCmdDataset' object has no attribute 'new_empty'"
+  * Exporting in pytorch worked fine
+* Both models only predict straight moves :(
+
+# Plans
+
+* Fix the models
+* See if I can figure out the exporting issue 
+# Continue working through FastAI course
