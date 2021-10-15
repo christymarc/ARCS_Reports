@@ -1,12 +1,13 @@
 # Activities
 
 * Ran RNN and hybrid models through imitator script on 20 mazes
-* Fixed paneled and stacked models
+* Attempted to fix paneled and stacked models
 
 # Issues
 
-* 
+* Paneled and stacked models getting error with "lambda" when getting run through the imitator script
+* Regression models still not working
 
 # Plans
 
-* 
+* Attempting to get all paneled, stacked, and regression models working
