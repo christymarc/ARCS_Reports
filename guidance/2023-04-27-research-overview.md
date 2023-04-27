@@ -9,7 +9,7 @@ The goal of this project is to create a hyper-realistic simulation in which a ro
 
 ## Research Questions to Answer
 From basic to complex (with reference to each step of the research process we look at):
-* can we train an accurate model? -: (training)
+* can we train an accurate model? <div align="right"> (training) <div>
 * can we train a robot and have it perform well in the same environment with the same conditions? (inference/testing)
 * can we have it perform well in simulated environments with different conditions? (generalization)
 * can we train a model using simulation and have a real-world robot operate in Oldenborg dorm? (crossing the reality gap)
