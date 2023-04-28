@@ -1,5 +1,11 @@
 # Overview
-Here I will talk about the research process: [setup](#step-1-setup), [data collection](#step-2-data-collection), [model training](#step-3-model-training), [inference](#step-4-inference), and [possible extensions](#step-5-extensions). If something is confusing, please email/slack me or refer to my reports (and search for key words via the github search bar) for more information.
+Here, I will talk about the research process: [setup](#step-1-setup), [data collection](#step-2-data-collection), [model training](#step-3-model-training), [inference](#step-4-inference), and [possible extensions](#step-5-extensions). 
+
+There are a couple different repositories we are using to facilitate the data collection and inference process. The diagram below demonstrates how they are connected:
+
+UE5 is Unreal Engine 5, a videogame-making platform we are using to make hyper-realistic simulations. [UnrealCV](https://github.com/unrealcv/unrealcv) is what we use as a bridge between UE5 and our python scripts, it allows us to communicate with UE5 projects over a port and send in commands to our project to do things like make the agent move, take screenshots, etc. [UE5env](https://github.com/arcslaboratory/ue5env) is a python package developed by the lab that acts as a wrapper around UnrealCV, giving us functions that enable us to easily connect the client, move, etc. via Python scripts. 
+
+If something is confusing, please email/slack me or refer to my reports (and search for key words via the github search bar) for more information.
 
 ## Step 1: Setup
 You will first need to setup UE5 and unrealcv. Follow this [tutorial](https://compusciencing.github.io/unrealcv-ue5-windows.html) to do this. Refer to Professor Clark to get an idea of which software you need to setup (it may or may not be everything in the tutorial).
