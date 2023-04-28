@@ -1,5 +1,5 @@
 # Overview
-Here, I will talk about the research process: [setup](#step-1-setup), [data collection](#step-2-data-collection), [model training](#step-3-model-training), [inference](#step-4-inference), and [possible extensions](#step-5-extensions). 
+Here, I will talk about the research process: [setup](#step-1-setup), [data collection](#step-2-data-collection), [model training](#step-3-model-training), [inference](#step-4-inference), and [possible extensions](#step-5-extensions) (note: you can click these links to jump to that section in the markdown). 
 
 There are a couple different repositories we are using to facilitate the data collection and inference process. The diagram below demonstrates how they are connected:
 
