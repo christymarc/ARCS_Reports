@@ -3,7 +3,7 @@ Here, I will talk about the research process: [setup](#step-1-setup), [data coll
 
 There are a couple different repositories we are using to facilitate the data collection and inference process. The diagram below demonstrates how they are connected:
 
-![research_diagram](https://user-images.githubusercontent.com/70297740/235019833-8a17623d-fc64-4971-a63e-68229e95897d.jpg = 250x300)
+<img src="https://user-images.githubusercontent.com/70297740/235019833-8a17623d-fc64-4971-a63e-68229e95897d.jpg" width="100" height="100">
 
 UE5 is Unreal Engine 5, a videogame-making platform we are using to make hyper-realistic simulations. [UnrealCV](https://github.com/unrealcv/unrealcv) is what we use as a bridge between UE5 and our python scripts, it allows us to communicate with UE5 projects over a port and send in commands to our project to do things like make the agent move, take screenshots, etc. [UE5env](https://github.com/arcslaboratory/ue5env) is a python package developed by the lab that acts as a wrapper around UnrealCV, giving us functions that enable us to easily connect the client, move, etc. via Python scripts. 
 
