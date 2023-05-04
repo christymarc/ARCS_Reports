@@ -39,3 +39,4 @@ The script to train models is in the [OldenborgTraining](https://github.com/arcs
 ## Step 5: Extensions
 novel data collection, changing lighting with image collection
 development of adversarial examples in order to introduce effective noise into training
+implement training and inference for cmd + image model
