@@ -26,7 +26,7 @@ Now we will setup the Oldenborg project that Liz made in Unreal Engine. The proj
 * if the project is not loading in -> [Untick the "is Spacially Loaded" box](https://forums.unrealengine.com/t/map-check-error-level-script-blueprint-refrences-streamed-actor/534202/7) on the elements that come up as causing errors. See link for more info.
 
 ## Step 2: Data Collection
-boxnav, but forward issue
+boxnav, but forward issue -> with forward issue, maybe use RC car? but make sure your able to disable passive movement (aka make sure the agent won't move down a slope automatically, it will only move with the forward() command)
 
 ## Step 3: Model Training
 Model training is to be done on the lab server. To train models, the [FastAI](https://www.fast.ai/) framework will be used; make sure this is installed in your conda environment.
