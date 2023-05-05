@@ -37,7 +37,7 @@ For data collection, all work should be done on the lab server. Clone [boxnav](h
 Currently, there is currently an issue with the [forward/backward](https://github.com/arcslaboratory/ue5env/blob/main/ue5env/__init__.py#L60) command in the ue5env wrapper. Even when given small incremements, the agent will move much farther forward than intended. There are a couple of ways that we may go about fixing this:
 * Maybe use a physical agent like an RC car. This could make it so that we could move the agent to a new spot in the map and/or create a blueprint for greater control of movement in the map. 
   * Note: Make sure your able to disable passive movement (aka make sure the agent won't move down a slope automatically, it will only move with the forward() command).
-* We could also try scaling the oldenborg environments size up so larger movements are relatively more small.
+* We could also try scaling the Oldenborg environments size up so larger movements are relatively more small.
 This process may require editing the ue5env repo as well as some of the repos that depend on ue5env like boxnav and OldenborgTraining. I have written TODOs to try and point to areas that may need editing but this may not cover all edits that need to be made.
 
 ## Step 3: Model Training
@@ -63,5 +63,5 @@ This project will likely have a couple of extensions beyond training and assessi
   * Adversarial examples are examples that have slight changes to examples that the model runs well on, but they make the model act in unexpected, and usually undesired, ways. For example, you want a model to turn left, but you change the lighting and now it goes right.
   * Basically we would edit images with slight distortions until an adversarial example is created. Maybe change things like lighting, texture, color variations, item positioning, etc. until an adversarial example is created then we use those examples to finetune the models.
   * This may be a way of efficiently streamlining the training process, finding the real weaknesses of our models--rather than guessing what they are--and then finetuning our model accordingly.
-* Put the model on a robot and have it navigate through oldenborg!
+* Put the model on a robot and have it navigate through Oldenborg!
 
