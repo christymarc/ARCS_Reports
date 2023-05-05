@@ -31,13 +31,13 @@ Now we will setup the Oldenborg project that Liz made in Unreal Engine. The proj
 
 ## Step 2: Data Collection
 For data collection, all work should be done on the lab server. Clone [boxnav](https://github.com/arcslaboratory/boxnav) onto the server. Create folders for image collection and your dataset. Then run and specify the script to '--collect' images via the desired navigator type.
-* Navigator types are just different methods of data collection
+* Navigator types are just different methods of data collection.
 
 ### TODO: 
 Currently, there is currently an issue with the [forward/backward](https://github.com/arcslaboratory/ue5env/blob/main/ue5env/__init__.py#L60) command in the ue5env wrapper. Even when given small incremements, the agent will move much farther forward than intended. There are a couple of ways that we may go about fixing this:
 * Maybe use a physical agent like an RC car. This could make it so that we could move the agent to a new spot in the map and/or create a blueprint for greater control of movement in the map. 
-  * Note: Make sure your able to disable passive movement (aka make sure the agent won't move down a slope automatically, it will only move with the forward() command)
-* we could also try scaling the oldenborg environments size up so larger movements are relatively more small
+  * Note: Make sure your able to disable passive movement (aka make sure the agent won't move down a slope automatically, it will only move with the forward() command).
+* We could also try scaling the oldenborg environments size up so larger movements are relatively more small.
 This process may require editing the ue5env repo as well as some of the repos that depend on ue5env like boxnav and OldenborgTraining. I have written TODOs to try and point to areas that may need editing but this may not cover all edits that need to be made.
 
 ## Step 3: Model Training
@@ -53,15 +53,15 @@ Inference will be done on the lab machine, and it will also use the [OldenborgTr
 ## Step 5: Extensions
 This project will likely have a couple of extensions beyond training and assessing basic models. Possible Extensions/Next Steps:
 * Implement training and inference for cmd+image models
-  * cmd+image models are hybrid CNNs that takes as input the last move the model made as well as the current image frame and output the next move (these were shown to have the best performance in our 2021 experimentations)
-  * old code can be referenced as the original architecture design is in Pytorch but things like the custom dataset creation as well as training process may differ as new versions of Fastai have come out since 2021
+  * Cmd+image models are hybrid CNNs that takes as input the last move the model made as well as the current image frame and output the next move (these were shown to have the best performance in our 2021 experimentations).
+  * Old code can be referenced as the original architecture design is in Pytorch, but things like the custom dataset creation as well as training process may differ as new versions of Fastai have come out since 2021.
 * Novel data collection
-  * changing lighting with image collection so that everytime you snap a photo of the image, the lighting setting changes multiple times before the agent makes its next move
-  * maybe could also just have boxnav run through multiple times with differing lighting configurations
-* Development of adversarial examples in order to introduce effective noise into training
-  * this idea came from this [paper](https://aclanthology.org/P19-1103.pdf) on adversarial example generation for textual examples through synonym replacement and a novel scoring/replacement-ordering method
-  * adversarial examples are examples that have slight changes to examples that the model runs well on, but they make the model act in unexpected, and usually undesired, ways (you want a model to turn left, but you change the lighting and now it goes right)
-  * basically we would edit images with slight distortions until an adversarial example is created. Maybe change things like lighting, texture, color variations, item positioning, etc. until an adversarial example is created then we use those examples to finetune the models
-  * this may be a way of efficiently streamlining the training process, finding the real weaknesses of our models--rather than guessing what they are--and then finetuning our model accordingly 
-* put the model on a robot and have it navigate through oldenborg!
+  * Changing lighting with image collection so that everytime you snap a photo of the image, the lighting setting changes multiple times before the agent makes its next move.
+  * Maybe could also just have boxnav run through multiple times with differing lighting configurations.
+* Development of adversarial examples in order to introduce effective noise into training.
+  * This idea came from this [paper](https://aclanthology.org/P19-1103.pdf) on adversarial example generation for textual examples through synonym replacement and a novel scoring/replacement-ordering method.
+  * Adversarial examples are examples that have slight changes to examples that the model runs well on, but they make the model act in unexpected, and usually undesired, ways. For example, you want a model to turn left, but you change the lighting and now it goes right.
+  * Basically we would edit images with slight distortions until an adversarial example is created. Maybe change things like lighting, texture, color variations, item positioning, etc. until an adversarial example is created then we use those examples to finetune the models.
+  * This may be a way of efficiently streamlining the training process, finding the real weaknesses of our models--rather than guessing what they are--and then finetuning our model accordingly.
+* Put the model on a robot and have it navigate through oldenborg!
 
