@@ -63,4 +63,5 @@ This project will likely have a couple of extensions beyond training and assessi
   * adversarial examples are examples that have slight changes to examples that the model runs well on, but they make the model act in unexpected, and usually undesired, ways (you want a model to turn left, but you change the lighting and now it goes right)
   * basically we would edit images with slight distortions until an adversarial example is created. Maybe change things like lighting, texture, color variations, item positioning, etc. until an adversarial example is created then we use those examples to finetune the models
   * this may be a way of efficiently streamlining the training process, finding the real weaknesses of our models--rather than guessing what they are--and then finetuning our model accordingly 
+* put the model on a robot and have it navigate through oldenborg!
 
