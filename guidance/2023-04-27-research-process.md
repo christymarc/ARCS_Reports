@@ -48,9 +48,18 @@ At this point, it may help to also have [JupyterNotebook](https://jupyter.org/in
 The script to train models is in the [OldenborgTraining](https://github.com/arcslaboratory/OldenborgTraining) repo. In the repo, I have written run_training.py to streamline this process, but you will need to edit this according to your needs. Specifically, you need to edit what dataset you are using and what models you want to change; you may also want to add to this script if you want to train a certain number of iterations of a model. Refer to the repo's ReadMe for info on how to run the script.
 
 ## Step 4: Inference
-Inference will be done on the lab machine, and it will also use the [OldenborgTraining](https://github.com/arcslaboratory/OldenborgTraining) repo. Also in the repo, I have written run_inference.py to streamline this process, but you will have to edit this according to your needs.
+Inference will be done on the lab machine, and it will also use the [OldenborgTraining](https://github.com/arcslaboratory/OldenborgTraining) repo. Also in the repo, I have written run_inference.py to streamline this process, but you will have to edit this according to your needs. The images collected via inference will be in your UE5 project folder, in the Oldenborg project's ScreenShots<timestamp> folder (the timestamp is the time the folder was created).
 
 ## Step 5: Extensions
-novel data collection, changing lighting with image collection
-development of adversarial examples in order to introduce effective noise into training
-implement training and inference for cmd + image model
+This project will likely have a couple of extensions beyond training and assessing basic models. Possible Extensions/Next Steps:
+* Implement training and inference for cmd+image models
+  * cmd+image models are hybrid CNNs that takes as input the last move the model made as well as the current image frame and output the next move (these were shown to have the best performance in our 2021 experimentations.
+* Novel data collection
+  * changing lighting with image collection so that everytime you snap a photo of the image, the lighting setting changes multiple times before the agent makes its next move
+  * maybe could also just have boxnav run through multiple times with differing lighting configurations
+* Development of adversarial examples in order to introduce effective noise into training
+  * this idea came from this [paper](https://aclanthology.org/P19-1103.pdf) on adversarial example generation for textual examples
+  * adversarial examples are examples that make the model act in unexpected, and usually undesired, ways (you want a model to turn left but it goes right)
+  * basically we would edit images with slight distortions until an adversarial example is created. Maybe change things like lighting, texture, color variations, item positioning, etc. until an adversarial example is created then we use those examples to finetune the models
+  * this may be a way of efficiently streamlining the training process, finding the real weaknesses of our models--rather than guessing what they are--then finetuning accordingly 
+
