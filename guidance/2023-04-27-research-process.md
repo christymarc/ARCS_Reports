@@ -53,13 +53,14 @@ Inference will be done on the lab machine, and it will also use the [OldenborgTr
 ## Step 5: Extensions
 This project will likely have a couple of extensions beyond training and assessing basic models. Possible Extensions/Next Steps:
 * Implement training and inference for cmd+image models
-  * cmd+image models are hybrid CNNs that takes as input the last move the model made as well as the current image frame and output the next move (these were shown to have the best performance in our 2021 experimentations.
+  * cmd+image models are hybrid CNNs that takes as input the last move the model made as well as the current image frame and output the next move (these were shown to have the best performance in our 2021 experimentations)
+  * old code can be referenced as the original architecture design is in Pytorch but things like the custom dataset creation as well as training process may differ as new versions of Fastai have come out since 2021
 * Novel data collection
   * changing lighting with image collection so that everytime you snap a photo of the image, the lighting setting changes multiple times before the agent makes its next move
   * maybe could also just have boxnav run through multiple times with differing lighting configurations
 * Development of adversarial examples in order to introduce effective noise into training
-  * this idea came from this [paper](https://aclanthology.org/P19-1103.pdf) on adversarial example generation for textual examples
-  * adversarial examples are examples that make the model act in unexpected, and usually undesired, ways (you want a model to turn left but it goes right)
+  * this idea came from this [paper](https://aclanthology.org/P19-1103.pdf) on adversarial example generation for textual examples through synonym replacement and a novel scoring/replacement-ordering method
+  * adversarial examples are examples that have slight changes to examples that the model runs well on, but they make the model act in unexpected, and usually undesired, ways (you want a model to turn left, but you change the lighting and now it goes right)
   * basically we would edit images with slight distortions until an adversarial example is created. Maybe change things like lighting, texture, color variations, item positioning, etc. until an adversarial example is created then we use those examples to finetune the models
-  * this may be a way of efficiently streamlining the training process, finding the real weaknesses of our models--rather than guessing what they are--then finetuning accordingly 
+  * this may be a way of efficiently streamlining the training process, finding the real weaknesses of our models--rather than guessing what they are--and then finetuning our model accordingly 
 
