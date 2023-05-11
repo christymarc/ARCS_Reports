@@ -57,6 +57,7 @@ This project will likely have a couple of extensions beyond training and assessi
 * Implement training and inference for cmd+image models
   * Cmd+image models are hybrid CNNs that takes as input the last move the model made as well as the current image frame and output the next move (these were shown to have the best performance in our 2021 experimentations).
   * Old code can be referenced as the original architecture design is in Pytorch, but things like the custom dataset creation as well as training process may differ as new versions of Fastai have come out since 2021.
+    * code for training this architecture: [raycasting-simulation](https://github.com/anthonyjclark/raycasting-simulation/blob/master/Experiments/TrainCmdClassification.py)
 * Novel data collection
   * Changing lighting with image collection so that everytime you snap a photo of the image, the lighting setting changes multiple times before the agent makes its next move.
   * Maybe could also just have boxnav run through multiple times with differing lighting configurations.
