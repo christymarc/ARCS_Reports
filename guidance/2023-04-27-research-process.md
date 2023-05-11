@@ -30,7 +30,7 @@ Now we will setup the Oldenborg project that Liz made in Unreal Engine. The proj
 * if the project is not loading in -> [Untick the "is Spacially Loaded" box](https://forums.unrealengine.com/t/map-check-error-level-script-blueprint-refrences-streamed-actor/534202/7) on the elements that come up as causing errors. See link for more info.
 
 ## Step 2: Data Collection
-For data collection, all work should be done on the lab server. Clone [boxnav](https://github.com/arcslaboratory/boxnav) onto the server. Create folders for image collection and your dataset. Then run and specify the script to '--collect' images via the desired navigator type.
+For data collection, all work should be done on the lab computer. Clone [boxnav](https://github.com/arcslaboratory/boxnav) onto the computer. Create folders for image collection and your dataset. Then run and specify the script to '--collect' images via the desired navigator type.
 * Navigator types are just different methods of data collection.
 
 ### TODO: 
@@ -41,14 +41,16 @@ Currently, there is currently an issue with the [forward/backward](https://githu
 This process may require editing the ue5env repo as well as some of the repos that depend on ue5env like boxnav and OldenborgTraining. I have written TODOs to try and point to areas that may need editing but this may not cover all edits that need to be made.
 
 ## Step 3: Model Training
-Model training is to be done on the lab server. To train models, the [FastAI](https://www.fast.ai/) framework will be used; make sure this is installed in your conda environment.
+Model training is to be done on the lab server, so you should copy your training images from the lab computer to the server. 
+
+To train models, the [FastAI](https://www.fast.ai/) framework will be used; make sure this is installed in your conda environment.
 
 At this point, it may help to also have [JupyterNotebook](https://jupyter.org/install) in your conda environment, feel free to also install this.
 
 The script to train models is in the [OldenborgTraining](https://github.com/arcslaboratory/OldenborgTraining) repo. In the repo, I have written run_training.py to streamline this process, but you will need to edit this according to your needs. Specifically, you need to edit what dataset you are using and what models you want to change; you may also want to add to this script if you want to train a certain number of iterations of a model. Refer to the repo's ReadMe for info on how to run the script.
 
 ## Step 4: Inference
-Inference will be done on the lab machine, and it will also use the [OldenborgTraining](https://github.com/arcslaboratory/OldenborgTraining) repo. Also in the repo, I have written run_inference.py to streamline this process, but you will have to edit this according to your needs. The images collected via inference will be in your UE5 project folder, in the Oldenborg project's ScreenShots<timestamp> folder (the timestamp is the time the folder was created).
+Inference will be done on the lab machine, so you will need to export your trained models onto the lab machine. Inference will also use the [OldenborgTraining](https://github.com/arcslaboratory/OldenborgTraining) repo. Also in the repo, I have written run_inference.py to streamline this process, but you will have to edit this according to your needs. The images collected via inference will be in your UE5 project folder, in the Oldenborg project's ScreenShots<timestamp> folder (the timestamp is the time the folder was created).
 
 ## Step 5: Extensions
 This project will likely have a couple of extensions beyond training and assessing basic models. Possible Extensions/Next Steps:
